@@ -231,6 +231,7 @@ const TwoPointsDrawingTool = DrawingTool.named("TwoPointsDrawingTool")
 
       mousedownEv(_, [x, y]) {
         if (!self.canStartDrawing()) return;
+        if(_.ctrlKey) return;
         startPoint = { x, y };
         if (currentMode === DEFAULT_MODE) {
           modeAfterMouseMove = DRAG_MODE;
