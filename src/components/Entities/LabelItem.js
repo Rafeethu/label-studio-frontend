@@ -13,7 +13,7 @@ export const LabelItem = observer(({ item, regions, regionStore }) => {
   const color = item.background;
   const vars = asVars({ color });
 
-  const isHidden = Object.values(regions).reduce((acc, item) => acc && item.hidden, true);
+  const isHidden = Object.values(regions).reduce((acc, item) => acc && item.item.hidden, true);
   const count = Object.values(regions).length;
 
   return (
