@@ -1,0 +1,11 @@
+version: '1.0'
+services:
+  web:
+    build: ./
+    container_name: label_studio
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/label-studio'
+    stdin_open: true
+    tty: true
