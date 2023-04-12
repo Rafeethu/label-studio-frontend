@@ -150,7 +150,7 @@ const Model = types.model({
       if (self.parent?.type !== "labels" && !self.parent?.type.includes(region.results[0].type)) return false;
       return true;
     });
-
+    
     if (sameObjectSelectedRegions.length > 0 && applicableRegions.length === 0) return;
 
     // if we are going to select label and it would be the first in this labels group
@@ -213,6 +213,8 @@ const Model = types.model({
       }
     }
 
+    // commented by rifky to prevent type change
+    /*
     applicableRegions.forEach(region => {
       if (region) {
         region.setValue(self.parent);
@@ -221,6 +223,7 @@ const Model = types.model({
         region.updateSpans?.();
       }
     });
+    */
   },
 
   setVisible(val) {

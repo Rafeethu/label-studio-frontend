@@ -323,6 +323,13 @@ const SelectionLayer = observer(({ item, selectionArea }) => {
     supportsTransform = supportsTransform && shape.supportsTransform === true;
     supportsRotate = supportsRotate && shape.canRotate === true;
     supportsScale = supportsScale && true;
+
+    if(shape.inno_readonly){
+      supportsTransform = false; 
+      supportsScale = false; 
+      supportsRotate = false;
+    }
+    
   });
 
   supportsTransform =

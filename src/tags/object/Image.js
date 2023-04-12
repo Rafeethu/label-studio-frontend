@@ -335,7 +335,7 @@ const Model = types.model({
   },
 
   get regionsInSelectionArea() {
-    return self.regs.filter(region => region.isInSelectionArea);
+    return self.regs.filter(region => !region.hidden && region.isInSelectionArea);
   },
 
   get selectedShape() {

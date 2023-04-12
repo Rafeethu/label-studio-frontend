@@ -36,7 +36,7 @@ const Model = types
 
     width: types.number,
     height: types.number,
-
+        
     rotation: 0,
     rotationAtCreation: 0,
     coordstype: types.optional(types.enumeration(["px", "perc"]), "perc"),
@@ -355,6 +355,10 @@ const HtxRectangleView = ({ item }) => {
     };
 
     eventHandlers.onDragStart = (e) => {
+      if(item.inno_readonly){
+        e.currentTarget.stopDrag(e.evt);
+        return;
+      }
       if (item.parent.getSkipInteractions()) {
         e.currentTarget.stopDrag(e.evt);
         return;

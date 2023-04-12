@@ -132,6 +132,8 @@ export const AreaMixin = types
      * Remove region
      */
     deleteRegion() {
+      if (self.inno_readonly) return;
+
       if (!self.annotation.editable) return;
       if (self.selected) self.annotation.unselectAll(true);
       if (self.destroyRegion) self.destroyRegion();
